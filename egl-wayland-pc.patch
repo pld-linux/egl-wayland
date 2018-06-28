@@ -1,0 +1,13 @@
+--- egl-wayland-1.0.3/Makefile.am.orig	2018-06-28 21:23:32.231426943 +0200
++++ egl-wayland-1.0.3/Makefile.am	2018-06-28 21:23:36.914760221 +0200
+@@ -50,7 +50,9 @@
+     wayland-eglstream.pc            \
+     wayland-eglstream-protocols.pc
+ 
+-noarch_pkgconfig_DATA = $(wayland_eglstream_pkgconfig_files)
++noarch_pkgconfig_DATA = wayland-eglstream-protocols.pc
++pkgconfigdir= $(libdir)/pkgconfig
++pkgconfig_DATA = wayland-eglstream.pc
+ 
+ CLEANFILES =                                  \
+     $(libnvidia_egl_wayland_la_built_sources) \
