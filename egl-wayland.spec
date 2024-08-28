@@ -5,23 +5,26 @@
 Summary:	Wayland EGL External Platform library
 Summary(pl.UTF-8):	Biblioteka platformy zewnętrznej Wayland EGL
 Name:		egl-wayland
-Version:	1.1.14
+Version:	1.1.16
 Release:	1
 License:	MIT
 Group:		Libraries
 #Source0Download: https://github.com/NVIDIA/egl-wayland/releases
 Source0:	https://github.com/NVIDIA/egl-wayland/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	1276e047bd4fcc87423e5b880afbcec7
+# Source0-md5:	a41eaebfde71495b847a39ddef5c819c
 Patch0:		%{name}-pc.patch
 URL:		https://github.com/NVIDIA/egl-wayland
+BuildRequires:	EGL-devel >= 1.5
+BuildRequires:	EGL-devel < 2
 BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	eglexternalplatform >= 1.1
 BuildRequires:	eglexternalplatform < 2
+BuildRequires:	libdrm-devel
 BuildRequires:	libtool >= 2:2.2
 BuildRequires:	pkgconfig
 BuildRequires:	wayland-devel >= 1.15
-BuildRequires:	wayland-egl-devel
+BuildRequires:	wayland-egl-devel >= 1.15
 BuildRequires:	wayland-protocols >= 1.8
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
